@@ -10,7 +10,7 @@ class Game extends React.Component {
 
   //Fetches headlines
   async componentDidMount() {
-    const response = await axios.get("https://redherringserver.dashl.repl.co/");
+    const response = await axios.get(process.env.REACT_APP_SERVER_URL);
     this.setState({headlines: response.data.headlines});
   }
 
@@ -18,7 +18,7 @@ class Game extends React.Component {
     //Calculates score
     let newScore = this.state.score;
     for(const item of this.state.selected) {
-      if(item.real) {
+      if(!item.real) {
         newScore++;
       } else {
         newScore--;
@@ -52,6 +52,7 @@ class Game extends React.Component {
           <Link to="/info"><i className="question circle icon" /></Link>
           <h1 className="header">Red Herring</h1>
           <h3>Click all the fake headlines</h3>
+          <div>Fake Headlines: {this.state.headlines.filter((obj) => obj.real === false).length}</div>
         </div>
 
         <div id="game">
