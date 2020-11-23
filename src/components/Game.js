@@ -5,10 +5,10 @@ import Headlines from "./Headlines";
 import Results from "./Results";
 
 class Game extends React.Component {
-  //Initializes component state
+  //Initializes component state *(variables)
   state = {headlines: [], score: 0, selected: [], submitted: false}
 
-  //Fetches headlines
+  //Fetches headlines from server
   async componentDidMount() {
     const response = await axios.get(process.env.REACT_APP_SERVER_URL);
     this.setState({headlines: response.data.headlines});

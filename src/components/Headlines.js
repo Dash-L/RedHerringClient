@@ -3,7 +3,7 @@ import React from "react";
 class Headlines extends React.Component {
   renderHeadlines = () => {
     return this.props.headlines.map(headline => {
-      //Adds styling to selected headlines
+      //Adds highlight class to selected headlines
       const selected = this.props.selected.map(item => item.content).includes(headline.content) ? "selected" : "";
 
       //Adds color styles to headlines when displaying results
