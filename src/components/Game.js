@@ -27,7 +27,7 @@ class Game extends React.Component {
     
     //Gets state ready to display results
     this.setState({
-      selected: [],
+      selected: this.state.selected,
       score: newScore,
       submitted: true
     });
