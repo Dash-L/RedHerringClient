@@ -60,9 +60,9 @@ class Game extends React.Component {
             <Results
               score={this.state.score}
               changeHeadlines={(newHeadlines) => this.setState({headlines: newHeadlines})}
-              changeScore={(newScore) => 
-              this.setState({score: newScore})}
+              changeScore={(newScore) => this.setState({score: newScore})}
               changeSubmitted={() => this.setState({submitted: false})}
+              resetSelected={() => this.setState({selected: []})}
             />
           }
 

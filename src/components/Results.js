@@ -9,6 +9,7 @@ class Results extends React.Component {
     this.props.changeHeadlines(response.data.headlines);
     this.props.changeScore(0);
     this.props.changeSubmitted();
+    this.props.resetSelected();
   }
 
   render() {
